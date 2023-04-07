@@ -34,7 +34,7 @@ const createCategoryController = async (req, res) => {
   }
 };
 
-//update category
+
 const updateCategoryController = async (req, res) => {
   try {
     const { name } = req.body;
@@ -59,7 +59,7 @@ const updateCategoryController = async (req, res) => {
   }
 };
 
-// get all cat
+
 const categoryControlller = async (req, res) => {
   try {
     const category = await categoryModel.find({});
@@ -78,7 +78,7 @@ const categoryControlller = async (req, res) => {
   }
 };
 
-// single category
+
 const singleCategoryController = async (req, res) => {
   try {
     const category = await categoryModel.findOne({ slug: req.params.slug });
@@ -97,7 +97,7 @@ const singleCategoryController = async (req, res) => {
   }
 };
 
-//delete category
+
 const deleteCategoryCOntroller = async (req, res) => {
   try {
     const { id } = req.params;

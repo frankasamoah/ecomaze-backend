@@ -282,7 +282,7 @@ const searchProductController = async (req, res) => {
   }
 };
 
-// similar products
+
 const realtedProductController = async (req, res) => {
   try {
     const { pid, cid } = req.params;
@@ -328,8 +328,7 @@ const productCategoryController = async (req, res) => {
   }
 };
 
-//payment gateway api
-//token
+
 const braintreeTokenController = async (req, res) => {
   try {
     gateway.clientToken.generate({}, function (err, response) {
@@ -344,7 +343,7 @@ const braintreeTokenController = async (req, res) => {
   }
 };
 
-//payment
+
 const brainTreePaymentController = async (req, res) => {
   try {
     const { nonce, cart } = req.body;
