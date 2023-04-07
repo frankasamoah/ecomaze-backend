@@ -16,7 +16,12 @@ const {
   updateProductController,
 } = require("../controllers/productController.js");
 const { isAdmin, requireSignIn } = require("../middlewares/authMiddleware.js");
-const formidable = require("express-formidable"); //to accept form data using fs(file system)
+//to accept form data using fs(file system)
+const formidable = require("express-formidable");
+
+
+
+
 
 const router = express.Router();
 
@@ -25,7 +30,7 @@ router.post(
   "/create-product",
   requireSignIn,
   isAdmin,
-  formidable(),
+ formidable(),
   createProductController
 );
 
