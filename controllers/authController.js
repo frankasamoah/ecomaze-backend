@@ -9,22 +9,22 @@ const registerController = async (req, res) => {
     const { name, email, password, phone, address, answer } = req.body;
     
     if (!name) {
-      return res.send({ error: "Name is Required" });
+      return res.send({ error: "Type your name" });
     }
     if (!email) {
-      return res.send({ message: "Email is Required" });
+      return res.send({ message: "Email is required" });
     }
     if (!password) {
-      return res.send({ message: "Password is Required" });
+      return res.send({ message: "Give your password" });
     }
     if (!phone) {
-      return res.send({ message: "Phone number is Required" });
+      return res.send({ message: "Phone number is required" });
     }
     if (!address) {
-      return res.send({ message: "Address is Required" });
+      return res.send({ message: "Give your address" });
     }
     if (!answer) {
-      return res.send({ message: "Answer is Required" });
+      return res.send({ message: "Provide an answer" });
     }
     
     const exisitingUser = await userModel.findOne({ email });
@@ -85,7 +85,7 @@ const loginController = async (req, res) => {
     if (!match) {
       return res.status(200).send({
         success: false,
-        message: "Invalid Password",
+        message: "Invalid password",
       });
     }
 
@@ -94,7 +94,7 @@ const loginController = async (req, res) => {
     });
     res.status(200).send({
       success: true,
-      message: "login successfully",
+      message: "login successful",
       user: {
         _id: user._id,
         name: user.name,
@@ -141,7 +141,7 @@ const forgotPasswordController = async (req, res) => {
     await userModel.findByIdAndUpdate(user._id, { password: hashed });
     res.status(200).send({
       success: true,
-      message: "Password Reset Successfully",
+      message: "Password reset successful",
     });
   } catch (error) {
     console.log(error);
